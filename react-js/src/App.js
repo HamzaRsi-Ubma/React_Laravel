@@ -1,20 +1,23 @@
 import React from 'react';
-import Function from './Function';
-import User from './User';
 import Home from './Home';
 import About from './components/About'
+import Navbar from './components/Navbar';
+import {Routes,Route} from 'react-router'
+import { BrowserRouter as Router} from "react-router-dom";
 function App() {
-
   return (
-    <div>
-     <Function text="this is a prop from App.js"/>
-
-     <User name={{data:'Ghazouani Hamza'}} address={{data:'Annaba'}}/>
-     <Home text="this is a prop from Home class"/>
-     <About content="this is About Page"/>
-    </div>
+    <>
+     <Router>
+      <Navbar/>
+      <Home/>
+        <Routes>
+          <Route exaxt path="/" element={<Home/>}></Route>
+          <Route exact path="/about" element={<About/>}></Route>
+        </Routes>
+     </Router>
+    </>
   )
-    ;
+  ;
 
 }
 
