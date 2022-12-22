@@ -12,6 +12,25 @@ export const Register = () => {
     const navigate = useNavigate();
 
     async function Save(){
+
+      let filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+      if(name=="")
+      {
+        alert('name is required');
+      }else if(shop==""){
+
+      }else if(mobile==""){
+
+      }else if(email==""){
+
+      }else if (!filter.test(email)) {
+         alert('email not valide!');
+      }else if(address==""){
+
+      }else if(password==""){
+
+      }
         let item={name,shop,mobile,email,address,password}
         //console.warn(item)
         let result = await fetch('http://127.0.0.1:8000/api/register-user',{
@@ -20,6 +39,7 @@ export const Register = () => {
         body:JSON.stringify(item)
     });
     result= await result.json();
+    alert(result['email']);
     navigate('/thanks');
     //console.warn('User registred successfully!',result);
     }
