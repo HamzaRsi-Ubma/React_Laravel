@@ -2,7 +2,7 @@ import React from 'react'
 
 export const Thanks = () => {
   return (
-    <div>Thanks for your registration.</div>
+    <div>Thanks For Register</div>
   )
 }
 

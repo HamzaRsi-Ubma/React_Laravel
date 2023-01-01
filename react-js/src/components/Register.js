@@ -39,7 +39,7 @@ export const Register = () => {
         body:JSON.stringify(item)
     });
     result= await result.json();
-    alert(result['email']);
+    //alert(result['email']);
     navigate('/thanks');
     //console.warn('User registred successfully!',result);
     }
