@@ -7,6 +7,7 @@ import Thanks from './components/Thanks'
 import Login from './components/Login';
 import Account from './components/Account';
 import Navbar from './components/Navbar';
+import  Logout  from './components/Logout';
 import {Routes,Route} from "react-router-dom";
 import { BrowserRouter as Router} from "react-router-dom";
 function App() {
@@ -22,6 +23,8 @@ function App() {
           <Route exact path="/thanks" element={<Thanks/>}></Route>
           <Route exact path="/login" element={<Login/>}></Route>
           <Route exact path="/account" element={<Account/>}></Route>
+          <Route exact path="/logout" element={<Logout/>}></Route>
+
         </Routes>
      </Router>
     </>

@@ -1,9 +1,10 @@
 import React from 'react'
 import Nav from 'react-bootstrap/Nav';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'
 
 export const Navbar = () => {
-  
+  const navigate = useNavigate();
   return (
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <Link class="navbar-brand" to="#">React-Laravel</Link>
@@ -22,12 +23,28 @@ export const Navbar = () => {
           <li class="nav-item">
             <Link class="nav-link" to="/contact-us">Contact Us</Link>
           </li>
+        {
+
+          localStorage.getItem('user')?
+          <>
+            <li class="nav-item">
+            <Link class="nav-link" to="/account">Account</Link>
+          </li>
+          <li class="nav-item">
+            <Link class="nav-link" to="/logout">Logout</Link>
+          </li>
+          </>
+          :
+          <>
           <li class="nav-item">
             <Link class="nav-link" to="/register">Register</Link>
           </li>
           <li class="nav-item">
             <Link class="nav-link" to="/login">Login</Link>
           </li>
+          </>
+          
+        }
         </ul>
 
       </div>

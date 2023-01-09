@@ -37,10 +37,9 @@ export const Login = () => {
         
         else {
             //console.warn("result",result);
+            localStorage.setItem('user',JSON.stringify(result))
             navigate('/account');
         }
-
-
     }
 
     return (

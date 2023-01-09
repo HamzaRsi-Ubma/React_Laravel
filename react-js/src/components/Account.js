@@ -1,8 +1,19 @@
 import React from 'react'
 
 export const Account = () => {
+  let user = JSON.parse(localStorage.getItem('user'))
   return (
-    <div>Welcome User You Are Logged successfully!</div>
+
+    <div>
+      {
+         localStorage.getItem('user')?
+          <>{user.userDetails.name}
+          </>
+          :
+          null
+          }
+          </div>
+
   )
 }
 
